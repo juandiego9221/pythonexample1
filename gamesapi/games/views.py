@@ -27,7 +27,7 @@ def game_list(request):
                                 status=status.HTTP_201_CREATED)
         return JSONResponse(game_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
-
+@csrf_exempt
 def game_detail(request,pk):
     try:
         game=Game.objects.get(pk=pk)
